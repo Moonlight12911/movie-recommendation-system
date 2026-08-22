@@ -1,0 +1,13 @@
+# The custom CSS in app.py draws white text on dark glass panels, so the dark
+# base is a requirement, not a preference. Without this file Streamlit starts
+# in its light theme and the gradient page title renders white-on-white.
+[theme]
+base = "dark"
+primaryColor = "#e50914"
+backgroundColor = "#0e1117"
+secondaryBackgroundColor = "#121826"
+textColor = "#e6edf3"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false

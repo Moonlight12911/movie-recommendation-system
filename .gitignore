@@ -1,0 +1,37 @@
+# Secrets - never commit the real API key
+.env
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Packaging / build artefacts
+build/
+dist/
+*.egg-info/
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Streamlit local settings (config.toml IS committed - the UI needs the theme)
+.streamlit/secrets.toml
+
+# Local cached API data
+.tmdb_catalogue_cache.json
+.tmdb_genre_cache.json
+
+# Throwaway verification scripts and scratch UIs
+_movie_rec_checks/
+docs/

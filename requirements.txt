@@ -1,0 +1,10 @@
+# Pinned to the versions this project was developed and verified against.
+# Loosen with care: streamlit in particular renames layout arguments often.
+requests>=2.31,<3
+pandas>=2.2,<4
+numpy>=1.26,<3
+scikit-learn>=1.4,<2
+# 1.50+ for the width="stretch" layout argument, which replaced the
+# deprecated use_container_width across st.image, st.button and st.dataframe.
+streamlit>=1.50,<2
+python-dotenv>=1.0,<2
