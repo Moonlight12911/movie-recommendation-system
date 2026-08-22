@@ -78,20 +78,30 @@ class _TransientTMDBError(Exception):
 
 def get_api_key() -> str:
     """
-    Return the TMDB key from the environment.
+    Return the TMDB key from the environment or Streamlit secrets.
 
     Raises:
         TMDBError: If the key is missing or still a placeholder.
     """
     api_key = os.getenv("TMDB_API_KEY", "").strip()
 
+    # Fallback to Streamlit secrets (for Streamlit Community Cloud deployments)
+    if not api_key or api_key.casefold() in PLACEHOLDER_API_KEYS:
+        try:
+            import streamlit as st
+
+            if hasattr(st, "secrets") and "TMDB_API_KEY" in st.secrets:
+                api_key = str(st.secrets["TMDB_API_KEY"]).strip()
+        except Exception:
+            pass
+
     if api_key.casefold() in PLACEHOLDER_API_KEYS:
         raise TMDBError(
             "No TMDB API key found.\n\n"
             "1. Create a free account at https://www.themoviedb.org/\n"
             "2. Copy your API key (v3 auth) from Settings > API\n"
-            "3. Put it in a file called .env next to app.py, like this:\n"
-            "   TMDB_API_KEY=your_real_key\n"
+            "3. For local use: add TMDB_API_KEY=your_key to .env\n"
+            "   For Streamlit Cloud: add TMDB_API_KEY = \"your_key\" in App Settings > Secrets\n"
             "4. Restart the app."
         )
 
