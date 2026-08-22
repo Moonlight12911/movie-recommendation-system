@@ -15,7 +15,7 @@ Similarity is computed by the machine learning engine itself — TMDB is used pu
 
 ![Movie Recommendation System](https://github.com/Moonlight12911/movie-recommendation-system/blob/main/image.png)
 
-[![🚀 Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Open%20App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](#)
+[![🚀 Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Open%20App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://movie-recommendation-mk.streamlit.app/)
 
 ---
 
